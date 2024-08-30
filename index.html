@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+</head>
+<body onload="bodyLoad()" onscroll="scroll()">
+
+  <!------------------------------------header---------------------------------->
+    <header>
+        <div class="logo">Portfolio</div>
+        <nav>
+            <a id="homeBtn" href="#home">Home</a>
+            <a id="aboutBtn" href="#about">About</a>
+            <a id="projectsBtn" href="#projects">Projects</a>
+            <a id="contactsBtn" href="#contacts">Contacts</a>
+        </nav>
+        <div class="hem">
+           <div class="bars" onclick="showNavBar()">
+             <div class="bar"></div>
+             <div class="bar"></div>
+             <div class="bar"></div>
+           </div>
+        </div>
+    </header>
+
+    <!------------------------------------home section---------------------------------->
+    <section class="home">
+      <div class="id" id="home"></div>
+         <h1>Home</h1>
+        <div class="homeContainer">
+          <div class="img">
+            <img src="satya.jpg" alt="profile-pic">
+            <div class="name">Saty Narayan Dharua</div>
+            <div class="des">Frontend Web Developer</div>
+          </div>
+          <div class="txt">
+             <div class="welcome">
+
+                 <div class="a">
+                  <p id="a">Welcome</p>
+                 </div>
+              <div class="b">
+                  <p id="b">To</p>
+              </div>
+              <div class="c">
+                  <p id="c">My</p>
+              </div>
+              <div class="d">
+                <p id="d">Personal</p>
+              </div><br>
+              <div class="e">
+                <p id="e">Portfolio</p>
+              </div>
+              <div class="f">
+                <p id="f">Website.</p>
+              </div>
+
+             </div>
+             <div class="social">
+              <a id="bi-linkedin" onmouseout="fun2('bi-linkedin')" href="https://www.linkedin.com/in/satya-narayan-4992b7174/" class="bi bi-linkedin"></a>
+              <a id="bi-github" onmouseout="fun2('bi-github')" href="https://github.com/SatyShrey" class="bi bi-github"></a>
+              <a id="bi-twitter-x" onmouseout="fun2('bi-twitter-x')"  href="https://x.com/SatyDharua" class="bi bi-twitter-x"></a>
+              <a id="bi-facebook" onmouseout="fun2('bi-facebook')"  href="https://www.facebook.com/narayan.dharua" class="bi bi-facebook"></a>
+             </div>
+             
+          </div>
+       </div>
+      
+    </section>
+
+    <!------------------------------------about section---------------------------------->
+    <section class="about">
+      <div class="id" id="about"></div>
+      <h1>About</h1>
+      <div class="aboutContainer">
+        <div class="txt">
+          <img src="satya2.jpg" alt="profile-pic">
+          
+          <p>
+            "Hi, I'm <b>Satya Narayan Dharua.</b> I'm a <b>Frontend Web Developer</b>, Up-to-date with the latest technologies and always eager to further discover the ever-changing world of digital mediums. My main drive is to help tech companies create complete products from concept to creation by delivering user-centered solution that invoke a positive impact on users."
+          </p>
+        </div>
+        <div class="div1">
+          <div class="education">
+            <h3>Educational Qualifications</h3>
+            <dl>
+               <dt>Graduation</dt>
+               <dd>
+                   School: <span>Anchal Highschool, Padhel.</span><br>
+                   Score: <span>48%.</span><br>
+                   Year of Passout: <span>2012.</span>
+               </dd>
+               <dt>12th</dt>
+               <dd>
+                School: <span>Binapani Jr. College, Dhumabhata.</span><br>
+                Score: <span>52%</span><br>
+                Year of Passout: <span>2016</span>
+               </dd>
+               <dt>10th</dt>
+               <dd>
+                School: <span>Academy of Management and Information Technology, Khurda.</span><br>
+                Score: <span>72%</span><br>
+                Year of Passout: <span>2023</span>
+               </dd>
+            </dl>
+          </div>
+          <div class="skills">
+            <h3>Technical Skills</h3>
+            <dl>
+              <dt>HTML</dt>
+              <dd><div class="html"></div></dd>
+              <dt>CSS</dt>
+               <dd><div class="css"></div></dd>
+               <dt>JavaScript</dt>
+               <dd><div class="js"></div></dd>
+            </dl>
+          </div>
+        </div>
+        <div class="btnDiv">
+            <button onmouseout="fun2('download')"><div class="cls1" id="download"><a href="CV_SND.pdf" class="bi bi-download"> My resume</a></div></button>
+        </div>
+      </div>
+    </section>
+
+    <!------------------------------------projects section---------------------------------->
+    <section class="projects">
+      <div class="id" id="projects"></div>
+      <h1>Projects</h1>
+      <div class="projectsContainer">
+         <h3>My Projects</h3>
+         <div class="projectsDiv">
+           </div>
+      </div>
+    </section>
+
+
+    <!------------------------------------contacts section---------------------------------->
+    <section class="contacts">
+      <div class="id" id="contacts"></div>
+      <h1>Contacts</h1>
+      <div class="contactsContainer">
+        <div class="col">
+          <h3>Contact me</h3>
+          <dl>
+            <dt class="bi bi-telephone">Mobile:</dt>
+            <dd>+917749041799</dd>
+            <dt class="bi bi-envelope-at">Email:</dt>
+            <dd>satyaxyz31@gmail.com</dd>
+            <dt class="bi bi-whatsapp">WhatsApp:</dt>
+            <dd>+917749041799</dd>
+            <dt class="bi bi-twitter-x">Twitter(X)</dt>
+            <dd>@SatyDharua</dd>
+            <dt class="bi bi-house">Address:</dt>
+            <dd>City-Balangir<br>State- Odisha<br>PIN-767024(INDIA).</dd>
+          </dl>
+        </div>
+        <div class="col">
+            <form id="form">
+              <h3>Feedback</h3>
+              <dl>
+                <dt>Your name:</dt>
+                <dd><input name="name" required type="text"></dd>
+                <dt>Your email:</dt>
+                <dd><input name="email" required type="email"></dd>
+                <dt>Your phone number:</dt>
+                <dd><input name="phone" placeholder="within country code.." required type="text" pattern="\+91\d{10}"></dd>
+              </dl>
+              <textarea placeholder="Write message...." name="" id="" required></textarea>
+              <div class="alert"></div>
+              <div class="btnDiv"><button type="submit" onmouseout="fun2('send')"><div class="div1" id="send"><div class="div2 bi bi-send">Send</div></div></button></div>
+            </form>
+        </div>
+      </div>
+    </section>
+
+
+<!--------------------------------Javascript----------------------------------------------->
+    <script src="script.js"></script>
+<!--------------------------------Javascript----------------------------------------------->
+
+
+</body>
+</html>
