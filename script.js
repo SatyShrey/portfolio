@@ -30,9 +30,6 @@ var pages=[
 
 
 var header=document.querySelector('header');
-var text=`Welcome To My Personal Portfolio Website.`;
-var sec=0;
-var interval=1;
 
 function bodyLoad(){
  pages.map((page)=>{
@@ -47,19 +44,23 @@ function bodyLoad(){
  writer();
 }
 
-
 function writer(){//////writer function started
+  var text=`Welcome To My Personal Portfolio Website.`;
+  var sec=0;
+  var interval=1;
   document.getElementById('bar').style.animation=`blink 0.${interval}s infinite alternate`;
   text.split('').map((letter)=>{
       sec=sec+interval;
      setTimeout(()=>{
       document.getElementById('text').textContent+=letter;
      },sec*100);
-
-     setTimeout(()=>{
-      document.getElementById('bar').innerHTML='';
-     },text.length*100*interval);
   })
+
+  setTimeout(()=>{
+    document.getElementById('bar').innerHTML='';
+    document.getElementById('profile-pic').style.width='400px';
+    document.getElementById('profile-pic').style.borderWidth='7px';
+   },text.length*100*interval);
 }//////writer function closed
 
 

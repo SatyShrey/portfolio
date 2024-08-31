@@ -16,6 +16,7 @@ header{
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     position:sticky;
     top: 0px;
     background-color: rgb(12, 12, 46);
@@ -27,7 +28,7 @@ header{
     color:orange;
     font-weight: bold;
     font-family:Matemasie;
-    margin-left:3px ;
+    margin:9px;
 }
 .hem .bars{
     width: 47px;
@@ -160,11 +161,18 @@ section h1{
 }
 
 .homeContainer .img{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
 }
 
 .homeContainer .txt{
-    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 #writeText{
     background: linear-gradient(white,aqua);
@@ -173,7 +181,9 @@ section h1{
     font-size: 70px;
     padding: 5px;
     text-align: center;
+    letter-spacing: 3px;
     font-family:Lilita One;
+    margin-top: 20px;
 }
 
 @keyframes blink{
@@ -183,39 +193,31 @@ section h1{
 }
 
 
-.homeContainer .img img{
+.homeContainer .img img{ 
     width: 400px;
+    border: 7px ridge aqua;
     max-width: 90%;
     border-radius:50%;
-    box-shadow: aqua 0px 0px 40px;
     margin: auto;
+    overflow: hidden;
+    transition: 1s;
 }
 
 .homeContainer .img img:hover{
-    animation: anim2 2s infinite alternate linear;
+    box-shadow: 0px 0px 20px aqua;
 }
 
-@keyframes anim2{
-    100%{
-        box-shadow: rgb(255, 0, 106) 0px 0px 50px;
-    }75%{
-        box-shadow: rgb(0, 200, 255) 0px 0px 50px;
-    }50%{
-        box-shadow: rgb(0, 255, 0) 0px 0px 50px;
-    }25%{
-        box-shadow: rgb(132, 0, 255) 0px 0px 50px;
-    }0%{
-        box-shadow: rgb(246, 255, 0) 0px 0px 50px;
-    }
-}
 
 .img .name{
     color: aqua;
     text-shadow:black 0px 0px 10px;
     font-size: 35px;
     font-weight: bold;
-    margin-top: 20px;
+    height: 40px;
+    width: fit-content;
+    overflow: hidden;
 }
+
 .img .des{
     color:orange;
     font-size: 20px;
@@ -255,6 +257,7 @@ section h1{
     text-indent: 30px;
     margin-top: 10px;
     padding: 0px 2%;
+    letter-spacing: 2px;
 }
 
 .aboutContainer .txt{
@@ -397,29 +400,27 @@ section h1{
 }
 
 .projectsDiv{
-    display: grid;
-    grid-template-columns: 6fr 6fr;
+    text-align: center;
 }
 .projectsDiv .col{
+    display: inline-block;
     text-align: center;
     text-decoration: none;
-    width: 400px;
-    max-width: 47vw;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     max-height: 50vh;
     background-size: cover;
     background-repeat: no-repeat;
-    margin:auto;
-    margin-bottom: 20px;
+    margin:5px;
+    border: 1px solid aqua;
     border-radius: 7px;
     cursor: pointer;
     overflow: hidden;
-    box-shadow:aqua 0px 0px 10px inset;
 }
 
 .projectsDiv .col div{
   padding: 5px;
-  color: white;
+  color: orange;
   font-weight: bold;
   font-size: 21px;
   background-color: rgb(0, 0, 0,0.9);
@@ -544,8 +545,12 @@ section h1{
     .hem{
         display: block;
     }
-    .aboutContainer .div1,.projectsDiv,.homeContainer,.contactsContainer{
+    .aboutContainer .div1,.homeContainer,.contactsContainer{
         grid-template-columns: 12fr;
+    }
+    .homeContainer .img img{
+        width: 0px;
+    border: 0px ridge aqua;
     }
     .contactsContainer textarea{
         max-width: 95vw;
