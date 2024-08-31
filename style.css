@@ -173,7 +173,6 @@ section h1{
     font-size: 70px;
     padding: 5px;
     text-align: center;
-    letter-spacing: 3px;
     font-family:Lilita One;
 }
 
@@ -256,7 +255,6 @@ section h1{
     text-indent: 30px;
     margin-top: 10px;
     padding: 0px 2%;
-    letter-spacing: 2px;
 }
 
 .aboutContainer .txt{
