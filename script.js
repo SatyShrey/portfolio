@@ -30,6 +30,9 @@ var pages=[
 
 
 var header=document.querySelector('header');
+var text=`Welcome To My Personal Portfolio Website.`;
+var sec=0;
+var interval=1;
 
 function bodyLoad(){
  pages.map((page)=>{
@@ -41,21 +44,24 @@ function bodyLoad(){
   a.style.backgroundImage=`url(${page.nam}.png)`;
   projectsDiv.appendChild(a);
  });
-write('.a',0);
-write('.b',700,'a');
-write('.c',900,'b');
-write('.d',1100,'c');
-write('.e',1900,'d');
-write('.f',2800,'e');
-setTimeout(()=>{document.getElementById('f').style.border='0px solid';},3600);
+ writer();
 }
 
-function write(a,b,c){
-  setTimeout(()=>{
-    document.querySelector(a).style.display='inline-block';
-    if(c){document.getElementById(c).style.border='0px solid';}
-  },b)
-}
+
+function writer(){//////writer function started
+  document.getElementById('bar').style.animation=`blink 0.${interval}s infinite alternate`;
+  text.split('').map((letter)=>{
+      sec=sec+interval;
+     setTimeout(()=>{
+      document.getElementById('text').textContent+=letter;
+     },sec*100);
+
+     setTimeout(()=>{
+      document.getElementById('bar').innerHTML='';
+     },text.length*100*interval);
+  })
+}//////writer function closed
+
 
 function distance(e1,e2){
   const rect1=e1.getBoundingClientRect();

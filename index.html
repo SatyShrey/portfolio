@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fonts.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
 </head>
 <body onload="bodyLoad()" onscroll="scroll()">
@@ -38,28 +39,10 @@
             <div class="des">Frontend Web Developer</div>
           </div>
           <div class="txt">
-             <div class="welcome">
-
-                 <div class="a">
-                  <p id="a">Welcome</p>
-                 </div>
-              <div class="b">
-                  <p id="b">To</p>
-              </div>
-              <div class="c">
-                  <p id="c">My</p>
-              </div>
-              <div class="d">
-                <p id="d">Personal</p>
-              </div><br>
-              <div class="e">
-                <p id="e">Portfolio</p>
-              </div>
-              <div class="f">
-                <p id="f">Website.</p>
-              </div>
-
+              <div id="writeText">
+                 <b id="text"></b><b id="bar">|</b>
              </div>
+              
              <div class="social">
               <a id="bi-linkedin" onmouseout="fun2('bi-linkedin')" href="https://www.linkedin.com/in/satya-narayan-4992b7174/" class="bi bi-linkedin"></a>
               <a id="bi-github" onmouseout="fun2('bi-github')" href="https://github.com/SatyShrey" class="bi bi-github"></a>
@@ -78,10 +61,12 @@
       <h1>About</h1>
       <div class="aboutContainer">
         <div class="txt">
-          <img src="satya2.jpg" alt="profile-pic">
-          
-          <p>
-            "Hi, I'm <b>Satya Narayan Dharua.</b> I'm a <b>Frontend Web Developer</b>, Up-to-date with the latest technologies and always eager to further discover the ever-changing world of digital mediums. My main drive is to help tech companies create complete products from concept to creation by delivering user-centered solution that invoke a positive impact on users."
+          <img src="satya2.jpg" alt="profile-pic"><p class="signature">SatyaNarayanDharua</p>
+          <p class="para">
+            "Hi, I'm <b>Satya Narayan Dharua.</b> I'm a <b>Frontend Web Developer</b>, up-to-date with the latest
+             technologies and always eager to further discover the ever-changing world of digital mediums. My main 
+             drive is to help tech companies create complete products from concept to creation by delivering 
+             user-centered solution that invoke a positive impact on users."
           </p>
         </div>
         <div class="div1">
@@ -90,21 +75,21 @@
             <dl>
                <dt>Graduation</dt>
                <dd>
-                   College: <span>Academy of Management and Information Technology, Khurda.</span><br>
-                   Score: <span>72%.</span><br>
-                   Year of Passout: <span>2023.</span>
+                   School: <span>Anchal Highschool, Padhel.</span><br>
+                   Score: <span>48%.</span><br>
+                   Year of Passout: <span>2012.</span>
                </dd>
                <dt>12th</dt>
                <dd>
-                College: <span>Binapani Jr. College, Dhumabhata.</span><br>
+                School: <span>Binapani Jr. College, Dhumabhata.</span><br>
                 Score: <span>52%</span><br>
                 Year of Passout: <span>2016</span>
                </dd>
                <dt>10th</dt>
                <dd>
-                School: <span>Anchal Highschool, Padhel.</span><br>
-                Score: <span>48%</span><br>
-                Year of Passout: <span>2012</span>
+                School: <span>Academy of Management and Information Technology, Khurda.</span><br>
+                Score: <span>72%</span><br>
+                Year of Passout: <span>2023</span>
                </dd>
             </dl>
           </div>
@@ -167,7 +152,7 @@
                 <dt>Your email:</dt>
                 <dd><input name="email" required type="email"></dd>
                 <dt>Your phone number:</dt>
-                <dd><input name="phone" placeholder="+91xxxxxxxxxx" required type="text" pattern="\+91\d{10}"></dd>
+                <dd><input name="phone" placeholder="eg.+91xxxxxxxxxx" required type="text" pattern="\+91\d{10}"></dd>
               </dl>
               <textarea placeholder="Write message...." name="" id="" required></textarea>
               <div class="alert"></div>

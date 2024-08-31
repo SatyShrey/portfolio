@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Lilita+One&family=Matemasie&family=Nerko+One&family=New+Amsterdam&family=Passions+Conflict&family=Rubik+Maze&family=SUSE:wght@100..800&family=Sevillana&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -5,7 +8,7 @@
 }
 
 body{
-    background-color:#0E0F24;
+    background-color: #0E0F24;
 }
 
 header{
@@ -23,6 +26,8 @@ header{
     font-size: 50px;
     color:orange;
     font-weight: bold;
+    font-family:Matemasie;
+    margin-left:3px ;
 }
 .hem .bars{
     width: 47px;
@@ -143,6 +148,7 @@ section h1{
     margin:0px 5%;
     margin-bottom: 30px;
     border-bottom: 1px solid gray;
+    font-family: SUSE;
 }
 .id{
    position: absolute;
@@ -160,54 +166,21 @@ section h1{
 .homeContainer .txt{
     margin-top: 30px;
 }
-
-.txt .welcome div{
-    width: fit-content;
-    display: inline-block;
-}
-.txt .welcome div p{
-    overflow: hidden;
+#writeText{
+    background: linear-gradient(white,aqua);
+    color: transparent;
+    background-clip: text;
     font-size: 70px;
-    border-right: 2px solid;
-    width:100%;
-    white-space: nowrap;
-}
-.a p{
-    animation: a .7s steps(18),
-     b .4s step-end  alternate;
-}
-.b p{
-    animation: a .2s steps(18),
-    b .4s step-end  alternate; 
-}
-.c p{
-    animation: a .2s steps(18),
-    b .4s step-end  alternate;
-}
-.d p{
-    animation: a .8s steps(18),
-    b .4s step-end alternate;
-}
-.e p{
-    animation: a .9s steps(18),
-    b .4s step-end alternate;
-}.f p{
-    animation: a .8s steps(18),
-    b .4s step-end alternate;
+    padding: 5px;
+    text-align: center;
+    letter-spacing: 3px;
+    font-family:Lilita One;
 }
 
-
-@keyframes a{
-    from{ 
-        width: 0;
-    }
-}
-
-@keyframes b{
+@keyframes blink{
     50%{
-        border-color: transparent;
+        color: #0E0F24;
     }
-   
 }
 
 
@@ -272,45 +245,35 @@ section h1{
     transition: 0.5s;
 }
 
-.homeContainer .welcome{
-    margin: auto;
-    font-weight: bold;
-    color: white;
-    font-size: 3rem;
-    padding: 2%;
-    text-align: center;
-    div{
-        display: none;
-    }
-}
-
-.homeContainer .welcome{
-        .e,.f{color: aqua;}
-}
-
-.homeContainer p b{
-    color: white;
-}
-
 .aboutContainer{
     padding: 7px;
+}
+
+.aboutContainer .txt .para{
+    color: white;
+    font-size: 30px;
+    text-align: justify;
+    text-indent: 30px;
+    margin-top: 10px;
+    padding: 0px 2%;
+    letter-spacing: 2px;
 }
 
 .aboutContainer .txt{
     text-align: center;
 }
 
-.aboutContainer .txt p{
-    padding: 2%;
-    color: white;
-    font-size: 30px;
-    text-indent: 30px;
-    text-align: justify;
-}
-
 .aboutContainer .txt img{
     width: 300px;
     max-width: 90vw;
+}
+.aboutContainer .txt .signature{
+    font-family: Passions Conflict;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    display: block;
+    margin-top: -20px;
 }
 
 .aboutContainer dl{
@@ -556,7 +519,9 @@ section h1{
     width: fit-content;
     margin: auto;
 }
-
+.contactsContainer dl input{
+    text-align: center;
+}
 .contactsContainer .alert{
     height: 20px;
     text-align: center;
@@ -569,7 +534,7 @@ section h1{
     color: green;
 }
 @media (max-width:900px){
-    .txt .welcome div p{
+    #writeText{
         font-size: 50px;
     }
 }
@@ -596,7 +561,7 @@ section h1{
     .aboutContainer .txt p{
         font-size: large;
     }
-    .txt .welcome div p{
+    #writeText{
         font-size: 45px;
     }
 }
