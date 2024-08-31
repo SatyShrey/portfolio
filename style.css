@@ -213,9 +213,7 @@ section h1{
     text-shadow:black 0px 0px 10px;
     font-size: 35px;
     font-weight: bold;
-    height: 40px;
     width: fit-content;
-    overflow: hidden;
 }
 
 .img .des{
