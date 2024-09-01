@@ -122,10 +122,6 @@ function closeNavBar(){
     }, 450);
 }
 
-function fun2(n){
-  document.getElementById(n).style.transition='0.5s';//classList.add('rev');
-}
-
 
 var form=document.getElementById('form');
 form.addEventListener('submit',(e)=>{
