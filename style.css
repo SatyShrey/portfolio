@@ -568,6 +568,7 @@ section h1{
     }
     .homeContainer .img img{
         width: 0px;
+    border: 0px ridge aqua;
     }
     .contactsContainer textarea{
         max-width: 95vw;
