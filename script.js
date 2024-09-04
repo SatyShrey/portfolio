@@ -27,6 +27,10 @@ var pages=[
     url:'https://CountdownTimer3344.netlify.app/'
   },
   {
+    nam:'Clinic-Management',
+    url:'https://clinic-management3344.netlify.app/'
+  },
+  {
     nam:'p2pchats',
     url:'https://p2pchat3344.netlify.app/'
   },
@@ -67,6 +71,7 @@ function writer(){//////writer function started
   setTimeout(()=>{
     document.getElementById('bar').innerHTML='';
     document.getElementById('profile-pic').style.width='400px';
+    document.getElementById('profile-pic').style.borderWidth='7px';
    },text.length*100*interval);
 }//////writer function closed
 
