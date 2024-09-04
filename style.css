@@ -568,8 +568,7 @@ section h1{
     display: inline-block;
     border: 2px solid aqua;
     border-radius: 4px;
-    width: 400px;
-    max-width:94vw;
+    width: 350px;
     height: 300px;
     color: white;
     margin: 3px;
