@@ -569,6 +569,7 @@ section h1{
     border: 2px solid aqua;
     border-radius: 4px;
     width: 400px;
+    max-width: 95vw;
     height: 300px;
     color: white;
     margin: 3px;
@@ -619,9 +620,7 @@ section h1{
     .aboutContainer .txt p{
         font-size: large;
     }
-    .reviewSection .Card{
-        max-width: 97vw;
-    }
+   
     #writeText{
         font-size: 45px;
     }
