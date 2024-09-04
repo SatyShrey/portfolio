@@ -66,7 +66,6 @@ function writer(){//////writer function started
   setTimeout(()=>{
     document.getElementById('bar').innerHTML='';
     document.getElementById('profile-pic').style.width='400px';
-    document.getElementById('profile-pic').style.borderWidth='7px';
    },text.length*100*interval);
 }//////writer function closed
 
