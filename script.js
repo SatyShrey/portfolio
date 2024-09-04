@@ -45,7 +45,6 @@ function bodyLoad(){
   a.innerHTML=`<div id="${page.nam}">${page.nam}</div>`;
   a.setAttribute('class',`col ${page.nam}`);
   a.setAttribute('href',`${page.url}`);
-  a.setAttribute('onmouseout',`fun2('${page.nam}')`);
   a.style.backgroundImage=`url(${page.nam}.png)`;
   projectsDiv.appendChild(a);
  });
@@ -129,11 +128,3 @@ function closeNavBar(){
            </div>`;
     }, 450);
 }
-
-
-var form=document.getElementById('form');
-form.addEventListener('submit',(e)=>{
-  e.preventDefault();
-  document.querySelector('.alert').innerHTML=`<i>Message sent successfully.</i>`;
-  setTimeout(()=>{document.querySelector('.alert').innerHTML=''},1100);
-})

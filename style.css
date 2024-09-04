@@ -550,6 +550,44 @@ section h1{
     width: fit-content;
     color: green;
 }
+
+.bi-send:active{
+    color: red;
+}
+
+/*Feedback section...................*/
+.reviewSection{
+    text-align: center;
+}
+
+.reviewSection i{
+    color: orange;
+}
+
+.reviewSection .Card{
+    display: inline-block;
+    border: 2px solid aqua;
+    border-radius: 4px;
+    width: 400px;
+    height: 300px;
+    color: white;
+    margin: 3px;
+    text-align: start;
+    padding: 3px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+#reviewContainer{
+    max-height: 50vh;
+    overflow-y: scroll;
+}
+
+.Card p{
+    margin-top: 10px;
+}
+
+
 @media (max-width:900px){
     #writeText{
         font-size: 50px;

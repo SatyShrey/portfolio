@@ -72,24 +72,26 @@
           <div class="education">
             <h3>Educational Qualifications</h3>
             <dl>
-               <dt>Graduation</dt>
+              <dt>Master(MCA)</dt>
                <dd>
-                   School: <span>Anchal Highschool, Padhel.</span><br>
-                   Score: <span>48%.</span><br>
-                   Year of Passout: <span>2012.</span>
+                Institute: <span>Ganesh Institute of Management Studies.</span><br>
+                Year of Passout: <span>2025</span>
                </dd>
-               <dt>12th</dt>
+               <dt>Graduation(BCA)</dt>
                <dd>
-                School: <span>Binapani Jr. College, Dhumabhata.</span><br>
-                Score: <span>52%</span><br>
+                Institute: <span>Academy of Management and Information Technology, Khurda.</span><br>
+                Year of Passout: <span>2023</span>
+               </dd>
+               <dt>12th(+2 Science)</dt>
+               <dd>
+                Institute: <span>Binapani Jr. College, Dhumabhata.</span><br>
                 Year of Passout: <span>2016</span>
                </dd>
                <dt>10th</dt>
                <dd>
-                School: <span>Academy of Management and Information Technology, Khurda.</span><br>
-                Score: <span>72%</span><br>
-                Year of Passout: <span>2023</span>
-               </dd>
+                Institute: <span>Anchal Highschool, Padhel.</span><br>
+                Year of Passout: <span>2012.</span>
+               </dd>              
             </dl>
           </div>
           <div class="skills">
@@ -105,7 +107,7 @@
           </div>
         </div>
         <div class="btnDiv">
-            <button onmouseout="fun2('download')"><div class="cls1" id="download"><a href="CV_SND.pdf" class="bi bi-download"> My resume</a></div></button>
+            <button><div class="cls1" id="download"><a href="CV_SND.pdf" class="bi bi-download"> My resume</a></div></button>
         </div>
       </div>
     </section>
@@ -153,17 +155,25 @@
                 <dt>Your phone number:</dt>
                 <dd><input name="phone" placeholder="eg.+91xxxxxxxxxx" required type="text" pattern="\+91\d{10}"></dd>
               </dl>
-              <textarea placeholder="Write message...." name="" id="" required></textarea>
+              <textarea placeholder="Write message...." name="message" id="" required></textarea>
               <div class="alert"></div>
-              <div class="btnDiv"><button type="submit" onmouseout="fun2('send')"><div class="div1" id="send"><div class="div2 bi bi-send">Send</div></div></button></div>
+              <div class="btnDiv"><button type="submit"><div class="div1" id="send"><div class="div2 bi bi-send">Send</div></div></button></div>
             </form>
+            
         </div>
       </div>
+    </section>
+<!--Reviews---------------------------->
+    <section class="reviewSection">
+     <h1>Reviews and Feedbacks</h1>
+     <div id="reviewContainer"></div>
     </section>
 
 
 <!--------------------------------Javascript----------------------------------------------->
     <script src="script.js"></script>
+
+    <script type="module" src="module.js"></script>
 <!--------------------------------Javascript----------------------------------------------->
 
 
