@@ -569,6 +569,7 @@ section h1{
     border: 2px solid aqua;
     border-radius: 4px;
     width: 400px;
+    max-width:97vw;
     height: 300px;
     color: white;
     margin: 3px;
