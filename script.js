@@ -3,10 +3,6 @@ var body=document.querySelector('body');
 var projectsDiv=document.querySelector('.projectsDiv');
 var pages=[
   {
-    nam:'Chat_App',
-    url:'https://chatapp3344.netlify.app/'
-  },
-  {
     nam:'Watch',
     url:'https://watch3344.netlify.app/'
   },
@@ -31,7 +27,7 @@ var pages=[
     url:'https://clinic-management3344.netlify.app/'
   },
   {
-    nam:'p2pchats',
+    nam:'Chat-App',
     url:'https://p2pchat3344.netlify.app/'
   },
   {
