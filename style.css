@@ -396,13 +396,31 @@ section h1{
 }
 
 .aboutContainer .skills .html{
-    width: 90%;
+    width: 100%;
 }
 .aboutContainer .skills .css{
-    width: 80%;
+    width: 100%;
 }
 .aboutContainer .skills .js{
+    width: 100%;
+}
+.aboutContainer .skills .node{
     width: 70%;
+}
+.aboutContainer .skills .boot{
+    width: 90%;
+}
+
+.aboutContainer .skills .react{
+    width: 90%;
+}
+
+.aboutContainer .skills .mongo{
+    width: 90%;
+}
+
+.aboutContainer .skills .fire{
+    width: 90%;
 }
 
 .aboutContainer .skills dd:hover{
