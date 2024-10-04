@@ -33,6 +33,12 @@ var pages=[
   {
     nam:'todonotes',
     url:'https://todonotes3344.netlify.app/'
+  },{
+    nam:'NetFlix-Page',
+    url:"https://satyaatweb3-net.netlify.app/"
+  },{
+    nam:"FakeStore.",
+    url:"https://satyaatweb3-fakestore.netlify.app/"
   }
 ];
 
