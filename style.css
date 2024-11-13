@@ -1,0 +1,621 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Lilita+One&family=Matemasie&family=Nerko+One&family=New+Amsterdam&family=Passions+Conflict&family=Rubik+Maze&family=SUSE:wght@100..800&family=Sevillana&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #0E0F24;
+}
+
+header{
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position:sticky;
+    top: 0px;
+    background-color: rgb(12, 12, 46);
+    box-shadow: 3px 0px 5px aqua;
+}
+
+.logo{
+    font-size: 50px;
+    color:orange;
+    font-weight: bold;
+    font-family:Matemasie;
+    margin:9px;
+}
+.hem .bars{
+    width: 47px;
+    padding: 2px;
+    margin-right: 7px;
+    animation: bars 0.5s;
+}
+
+@keyframes bars{
+    from{width: 0;}to{width: 47px;}
+}
+
+.hem{
+    display: none;
+    position: absolute;
+    top: 18px;
+    right: 0px;
+}
+
+.bi-x{
+    font-size: 20px;
+    margin: 4px;
+    background-color: grey;
+    color: white;
+}
+.bi-x:hover{
+    background-color: white;
+    color: black;
+}
+.bi-x:active{
+    color: red;
+}
+
+.hem .bar{
+    background-color: white;
+    margin:5px 4px;
+    height: 4px;
+    border-radius: 1px;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+}
+
+header a{
+    align-self: center;
+    font-size: 19px;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 4px;
+    color: aqua;
+    width: fit-content;
+    border-bottom: 2px solid transparent;
+}
+
+header nav a:hover{
+     color:orange;
+     border-bottom: 2px solid orange;
+     transition: 0.5s;
+}
+
+.nav{
+    background-color: rgb(0, 0, 0,0.9);
+    width: fit-content;
+    border-radius: 4px;
+    overflow: hidden;
+    animation: s2b 0.5s;
+    width: 50vw;
+}
+
+
+.b2s{
+    .nav{
+        animation: b2s 0.5s;
+    }
+}
+
+@keyframes s2b{
+    from{
+        width: 0px;
+    }to{
+        width: 50vw;
+    }
+}
+@keyframes b2s{
+    from{
+        width: 50vw;
+    }to{
+        width: 0px;
+    }
+}
+
+.nav a{
+    display:block;
+    margin-left: 30px;
+}
+
+.nav a:hover{
+    color: orange;
+}
+
+section{
+    padding: 20px 0px;
+}
+
+section h3{
+    text-align: center;
+    font-size: 23px;
+    color: aqua;
+    margin-bottom: 20px;
+}
+
+section h1{
+    color: grey;
+    text-align: center;
+    font-size: 40px;
+    margin:0px 5%;
+    margin-bottom: 30px;
+    border-bottom: 1px solid gray;
+    font-family: SUSE;
+}
+.id{
+   position: absolute;
+   margin-top:-80px;
+}
+.homeContainer{
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+}
+
+.homeContainer .img{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.homeContainer .txt{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#writeText{
+    background: linear-gradient(rgb(250, 74, 188),aqua);
+    color: transparent;
+    background-clip: text;
+    font-size: 70px;
+    padding: 5px;
+    text-align: center;
+    letter-spacing: 3px;
+    font-family:Lilita One;
+    margin-top: 20px;
+}
+
+
+.homeContainer .img img{ 
+    width: 400px;
+    max-width: 95%;
+    margin: auto;
+    overflow: hidden;
+    transition: 1s;
+}
+
+.img .name{ 
+    color: aqua;
+    font-size: 35px;
+    height: fit-content;
+    div{
+        height: 100%;
+        overflow: hidden;
+    }
+}
+
+.img .des{
+    color:orange;
+    font-size: 20px;
+    height: fit-content;
+    overflow: hidden;
+    div{
+        height: 100%;
+        overflow: hidden;
+    }
+}
+
+.homeContainer .social{
+    margin: 50px 0px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.homeContainer .social a{
+    color: white;
+    font-size: 25px;
+    width: 50px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: .5s;
+}
+.homeContainer .social a:hover{
+    font-size: 35px;
+    color: aqua;
+}
+
+.aboutContainer{
+    padding: 7px;
+}
+
+.aboutContainer .txt .para{
+    color: white;
+    font-size: 30px;
+    text-align: justify;
+    text-indent: 30px;
+    margin-top: 10px;
+    padding: 0px 2%;
+    letter-spacing: 2px;
+}
+
+.aboutContainer .txt{
+    text-align: center;
+}
+
+.aboutContainer .txt img{
+    width: 300px;
+    max-width: 90vw;
+}
+.aboutContainer .txt .signature{
+    font-family: Passions Conflict;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    display: block;
+    margin-top: -20px;
+}
+
+.aboutContainer dl{
+    width: fit-content;
+    max-width: 99%;
+    margin: auto;
+}
+
+.aboutContainer dt{
+    color: darkgray;
+    font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 9px;
+}
+
+.aboutContainer .div1{
+    margin-top: 50px;
+    display:grid;
+    grid-template-columns: 6fr 6fr;
+}
+
+
+.aboutContainer .btnDiv{
+    width: fit-content;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.aboutContainer .btnDiv button{
+    border:2px solid green;
+    background-color: transparent;
+    width: 200px;
+    margin: 10px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    overflow: hidden;
+}
+
+.aboutContainer .btnDiv button a{
+    color:green;
+    font-size: 17px;
+    width: 200px;
+    text-decoration: none;
+    width: 200px;
+    padding: 7px 0px;
+    display: block;
+}
+
+.aboutContainer .btnDiv button .cls1{
+    width: 0px;
+    background-color: green;
+}
+
+.aboutContainer .btnDiv button:hover{
+    .cls1{
+        width: 200px;
+        transition: 1s;
+    }
+    a{
+        color: white; 
+    }
+}
+
+
+
+.aboutContainer .btnDiv a:active{
+    color: red;
+    box-shadow: black 0px 0px 10px inset;
+    transition: 0s;
+}
+
+.aboutContainer .div1 dd{
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.aboutContainer .education dt{
+    border-bottom: 2px solid darkgray;
+}
+
+.aboutContainer .div1 dd span{
+    color: orange;
+}
+
+.aboutContainer .skills dd{
+    height: 20px;
+    border: 2px solid grey;
+    border-radius: 10px;
+    width: 320px;
+    max-width: 97vw;
+    overflow: hidden;
+}
+
+.aboutContainer .skills dd div{
+    background:linear-gradient(to right,rgb(250, 74, 188),aqua);
+    height: 100%;
+}
+
+.aboutContainer .skills .html{
+    width: 100%;
+}
+.aboutContainer .skills .css{
+    width: 100%;
+}
+.aboutContainer .skills .js{
+    width: 100%;
+}
+.aboutContainer .skills .node{
+    width: 70%;
+}
+.aboutContainer .skills .boot{
+    width: 90%;
+}
+
+.aboutContainer .skills .react{
+    width: 90%;
+}
+
+.aboutContainer .skills .mongo{
+    width: 90%;
+}
+
+.aboutContainer .skills .fire{
+    width: 90%;
+}
+
+.aboutContainer .skills dd:hover{
+    div{
+        animation: fulfil 0.7s reverse;
+    }
+}
+
+@keyframes fulfil{
+   100%{
+        width: 0%;
+   }
+}
+
+.projectsDiv{
+    text-align: center;
+}
+.projectsDiv .col{
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    width: 300px;
+    height: 300px;
+    max-height: 50vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin:5px;
+    border: 1px solid aqua;
+    border-radius: 7px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.projectsDiv .col div{
+  padding: 5px;
+  color: orange;
+  font-weight: bold;
+  font-size: 21px;
+  background-color: rgb(0, 0, 0,0.9);
+  width:100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.projectsDiv .col:hover{
+    div{
+        height: 0%;
+        transition: 0.5s;
+        color: transparent;
+    }
+}
+
+.contactsContainer{
+    display: grid;
+    grid-template-columns: 6fr 6fr;
+}
+
+.contactsContainer .col{
+    width: fit-content;
+    margin: auto;
+}
+.contactsContainer dt{
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
+}
+.contactsContainer dd{
+    margin-bottom: 20px;
+    color: orange;
+    font-size: 17px;
+}
+
+.contactsContainer dd input{
+    width: 240px;
+    max-width: 99vw;
+    height: 27px;
+}
+
+.contactsContainer textarea{
+    resize: none;
+    width: 400px;
+    height: 200px;
+    margin: auto;
+    display: block;
+    padding: 4px;
+    max-width: 47vw;
+}
+
+.contactsContainer .btnDiv{
+   text-align: center;
+}
+
+.contactsContainer .btnDiv button{
+    color: green;
+    border:2px solid green;
+    background-color: transparent;
+    font-size: 17px;
+    width: 200px;
+    margin: 10px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    overflow: hidden;
+}
+.contactsContainer .btnDiv button .div1{
+    background: green;
+    width: 0px;
+}
+.contactsContainer .btnDiv button .div2{
+    width: 200px;
+    padding: 7px 0px;
+}
+.contactsContainer .btnDiv button:hover{
+    .div1{
+        width: 100%;
+        transition: 1s;
+        color: white;
+    }
+}
+
+.contactsContainer .btnDiv button:active{
+    color: red;
+    box-shadow: 0px 0px 10px black inset;
+}
+
+.contactsContainer dl{
+    width: fit-content;
+    margin: auto;
+}
+.contactsContainer dl input{
+    text-align: center;
+}
+.contactsContainer .alert{
+    height: 20px;
+    text-align: center;
+}
+
+.contactsContainer .alert i{
+    background-color: white;
+    padding: 5px;
+    width: fit-content;
+    color: green;
+}
+
+.bi-send:active{
+    color: red;
+}
+
+/*Feedback section...................*/
+.reviewSection{
+    text-align: center;
+}
+
+.reviewSection i{
+    color: orange;
+}
+
+.reviewSection .Card{
+    display: inline-block;
+    border: 2px solid aqua;
+    border-radius: 4px;
+    width: 400px;
+    max-width: 95vw;
+    height: 300px;
+    color: white;
+    margin: 3px;
+    text-align: start;
+    padding: 3px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+#reviewContainer{
+    max-height: 70vh;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.Card p{
+    margin-top: 10px;
+}
+
+
+@media (max-width:900px){
+    #writeText{
+        font-size: 50px;
+    }
+}
+
+@media (max-width:700px){
+    nav{
+        display: none;
+    }
+    .hem{
+        display: block;
+    }
+    .aboutContainer .div1,.homeContainer,.contactsContainer{
+        grid-template-columns: 12fr;
+    }
+    .homeContainer .img img{
+        width: 0px;
+    }
+    .contactsContainer textarea{
+        max-width: 95vw;
+    }
+    .projectsDiv .col{
+        max-width: 97vw;
+    }
+}
+
+@media (max-width:600px){
+    .aboutContainer .txt p{
+        font-size: large;
+    }
+   
+    #writeText{
+        font-size: 45px;
+    }
+}
