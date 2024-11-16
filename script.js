@@ -35,7 +35,7 @@ var pages=[
   },
   {
     nam:"WhatChat",
-    url:"https://satyaatweb3-whatchat.netlify.app/"
+    url:"https://gglchat.netlify.app/"
   },{
     nam:"ToDo",
     url:"https://satyaatweb3todo.netlify.app/"
