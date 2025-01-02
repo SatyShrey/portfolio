@@ -34,11 +34,14 @@ var pages=[
     url:"https://satyaatweb3-fakestore.netlify.app/"
   },
   {
-    nam:"Gglchat",
-    url:"https://gglchat.netlify.app/"
+    nam:"WhatChat",
+    url:"https://satyaatweb3-whatchat.netlify.app/"
   },{
     nam:"ToDo",
     url:"https://satyaatweb3todo.netlify.app/"
+  },{
+    nam:"new-year-wish",
+    url:"https://happynewyearwish2025.netlify.app/"
   }
 ];
 
