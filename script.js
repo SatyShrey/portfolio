@@ -34,8 +34,8 @@ var pages=[
     url:"https://satyaatweb3-fakestore.netlify.app/"
   },
   {
-    nam:"WhatChat",
-    url:"https://satyaatweb3-whatchat.netlify.app/"
+    nam:"GGLchat",
+    url:"https://gglchat.netlify.app/"
   },{
     nam:"ToDo",
     url:"https://satyaatweb3todo.netlify.app/"
