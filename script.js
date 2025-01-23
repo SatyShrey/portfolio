@@ -39,8 +39,8 @@ var pages=[
     nam:"new-year-wish",
     url:"https://happynewyearwish2025.netlify.app/"
   },{
-    nam:"WhatChat",
-    url:"https://gglchat.netlify.app/"
+    nam:"Hii",
+    url:"https://hi-messanger.netlify.app/"
  }
 ];
 
