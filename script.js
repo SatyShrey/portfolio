@@ -2,7 +2,6 @@
 var body=document.querySelector('body');
 var projectsDiv=document.querySelector('.projectsDiv');
 var pages=[
-  //object
   {
     nam:'Watch',
     url:'https://watch3344.netlify.app/'
@@ -41,7 +40,7 @@ var pages=[
     url:"https://happynewyearwish2025.netlify.app/"
   },{
     nam:"Hii",
-    url:"https://himessages.netlify.app/"
+    url:"https://hi-messanger.netlify.app/"
   }
 ];
 
