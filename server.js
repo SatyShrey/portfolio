@@ -75,7 +75,7 @@ app.get('/reviews', (req, res) => {
 //add reviews
 app.post('/addreviews', async (req, res) => {
     await Review.create(req.body);
-    res.send('Review set successfully')
+    res.send('Message sent..')
     res.end();
 });
 

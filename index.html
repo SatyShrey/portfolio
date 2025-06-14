@@ -180,21 +180,24 @@
       font-size: large;
       cursor: pointer;
     }
-    #reviews-div .container{
+
+    #reviews-div .container {
       max-width: 97vw;
       margin: auto;
     }
-    #reviews-div .container .box{
+
+    #reviews-div .container .box {
       display: inline-flex;
       flex-direction: column;
       border-radius: 7px;
       box-shadow: 0 0 2px black;
       padding: 7px;
-      width:fit-content;
+      width: fit-content;
       max-width: 100%;
-      pre{
+
+      pre {
         margin: 10px 0;
-        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
       }
     }
   </style>
@@ -209,11 +212,14 @@
     </nav>
   </header>
   <div class="div">
-    <h2>Admin Dashboard</h2>
+    <h2>Visitor's reviews</h2>
     <div id="reviews-div">
       <button id="btn-view">View all reviews</button>
     </div>
   </div>
+  <div class="alert-div" id="alert-div"></div>
+  <div id="confirm-div" class="confirm-div"></div>
+
 
   <noscript style="color: red;margin: 10px;">Warning : Please turn on javascript to run this app</noscript>
 
@@ -287,36 +293,36 @@
     }
 
     //view reviews function
-    async function viewReviews(){
-       const res = await fetch("/reviews", {
+    async function viewReviews() {
+      const res = await fetch("/reviews", {
         method: "GET",
         credentials: "include"
       });
       const reviews = await res.json();
       const container = document.createElement('div');
       container.classList.add('container');
-      reviewsDiv.innerHTML="";
+      reviewsDiv.innerHTML = "";
       reviewsDiv.appendChild(container);
       reviews.map((a, b) => {
-        const box=document.createElement("div");
+        const box = document.createElement("div");
         box.classList.add('box');
 
-        const nameP=document.createElement("p");
-        const emailSmall=document.createElement("small");
-        const phoneSmall=document.createElement("small");
-        const messagePre=document.createElement("pre");
+        const nameP = document.createElement("p");
+        const emailSmall = document.createElement("small");
+        const phoneSmall = document.createElement("small");
+        const messagePre = document.createElement("pre");
 
-        nameP.innerText=a.username;box.appendChild(nameP);
-        emailSmall.innerText=a.email;box.appendChild(emailSmall);
-        phoneSmall.innerText=a.phone;box.appendChild(phoneSmall);
-        messagePre.innerText=a.message;box.appendChild(messagePre);
+        nameP.innerText = a.username; box.appendChild(nameP);
+        emailSmall.innerText = a.email; box.appendChild(emailSmall);
+        phoneSmall.innerText = a.phone; box.appendChild(phoneSmall);
+        messagePre.innerText = a.message; box.appendChild(messagePre);
 
         container.appendChild(box);
       })
     }
     //view all reviews
-    const reviewButton=document.getElementById("btn-view");
-    reviewButton.addEventListener("click",()=>{
+    const reviewButton = document.getElementById("btn-view");
+    reviewButton.addEventListener("click", () => {
       viewReviews();
     })
   </script>
