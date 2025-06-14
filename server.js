@@ -31,6 +31,7 @@ const reviewSchema = new mongoose.Schema({
     username: String,
     email: String,
     message: String,
+    phone: String,
 });
 
 const User = mongoose.model("Users", userSchema);
