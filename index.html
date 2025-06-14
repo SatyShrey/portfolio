@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../node_modules/bootstrap-icons/icons/person-fill.svg">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: aliceblue;
+    }
+
+    header {
+      padding-top: 5px;
+    }
+
+    .alert-div .alert {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .alert-div .alert .box {
+      margin: auto;
+      margin-top: -100px;
+      animation: t2b 2s;
+      padding: 10px 4px;
+      width: 400px;
+      max-width: calc(100vw - 10px);
+      border-radius: 10px;
+      box-shadow: 0 0 2px black;
+      background-color: white;
+    }
+
+
+    .confirm-div .alert {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .confirm-div .alert .box {
+      margin: auto;
+      margin-top: 5px;
+      animation: t2b2 .4s;
+      padding: 10px 5px;
+      width: 400px;
+      max-width: calc(100vw - 10px);
+      border-radius: 10px;
+      box-shadow: 0 0 2px black;
+      background-color: white;
+      transition: .4s;
+
+      button {
+        border-radius: 4px;
+        background-color: transparent;
+        border: 1px solid;
+        width: 50px;
+        height: 30px;
+        margin: 5px 5px 0 5px;
+        cursor: pointer;
+        transition: .4s;
+      }
+
+      #yes {
+        border-color: green;
+        color: green;
+      }
+
+      #yes:hover {
+        background-color: green;
+        color: white;
+      }
+
+      #no {
+        border-color: red;
+        color: red;
+      }
+
+      #no:hover {
+        background-color: red;
+        color: white;
+      }
+    }
+
+    @keyframes t2b {
+      0% {
+        margin-top: -100px;
+      }
+
+      30% {
+        margin-top: 5px;
+      }
+
+      70% {
+        margin-top: 5px
+      }
+
+      100% {
+        margin-top: -100px;
+      }
+    }
+
+    @keyframes t2b2 {
+      0% {
+        margin-top: -100px;
+      }
+
+      100% {
+        margin-top: 5px;
+      }
+    }
+
+    h1 {
+      font-family: 'Courier New', Courier, monospace;
+      background: linear-gradient(to right, green, blue, rgb(255, 21, 99));
+      background-clip: text;
+      color: transparent;
+      width: fit-content;
+      margin: auto;
+    }
+
+    nav {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+
+    #user-name-div {
+      background: linear-gradient(blueviolet, black);
+      background-clip: text;
+      color: transparent;
+      width: fit-content;
+      text-transform: capitalize;
+      font-size: large;
+      font-weight: bold;
+      margin: 0 10px;
+    }
+
+    #btn-logout {
+      padding: 7px;
+      border: none;
+      color: white;
+      background: linear-gradient(black, grey);
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: .5s;
+    }
+
+    #btn-logout:hover {
+      box-shadow: 0 0 5px black;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    #btn-view {
+      border: none;
+      background-color: black;
+      color: white;
+      border-radius: 7px;
+      padding: 7px;
+      margin: 10px;
+      font-size: large;
+      cursor: pointer;
+    }
+    #reviews-div .container{
+      max-width: 97vw;
+      margin: auto;
+    }
+    #reviews-div .container .box{
+      display: inline-flex;
+      flex-direction: column;
+      border-radius: 7px;
+      box-shadow: 0 0 2px black;
+      padding: 7px;
+      width:fit-content;
+      max-width: 100%;
+      pre{
+        margin: 10px 0;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+      }
+    }
+  </style>
+  <title>Portfolio</title>
+</head>
+
+<body onload="bodyLoad()">
+  <header>
+    <h1>Portfolio</h1>
+    <nav>
+      <div id="user-name-div"></div> <button id="btn-logout">Logout</button>
+    </nav>
+  </header>
+  <div class="div">
+    <h2>Admin Dashboard</h2>
+    <div id="reviews-div">
+      <button id="btn-view">View all reviews</button>
+    </div>
+  </div>
+
+  <noscript style="color: red;margin: 10px;">Warning : Please turn on javascript to run this app</noscript>
+
+  <script>
+    const alertDiv = document.getElementById("alert-div");
+    const confirmDiv = document.getElementById("confirm-div");
+    const reviewsDiv = document.getElementById('reviews-div');
+    let okConfirm = ''
+    let noConfirm = () => {
+      const box = document.getElementById('confirm-box')
+      box.style.marginTop = '-100px';
+      setTimeout(() => { confirmDiv.innerHTML = '' }, 410)
+    }
+
+
+    function alert2(text) {
+      alertDiv.innerHTML = ` <div class="alert">
+                <div class="box"><p style="color: red;">${text}</p></div>
+            </div>`;
+      setTimeout(() => { alertDiv.innerHTML = '' }, 2000)
+    }
+
+    function alert(text) {
+      alertDiv.innerHTML = ` <div class="alert">
+                <div class="box"><p style="color: green;">${text}</p></div>
+            </div>`;
+      setTimeout(() => { alertDiv.innerHTML = '' }, 2000)
+    }
+
+    //custom confirm
+    function confirm(text, fn) {
+      okConfirm = fn;
+      confirmDiv.innerHTML = ` <div class="alert">
+                <div class="box" id="confirm-box">
+                   <p style="color: green;">${text}</p>
+                   <div>
+                     <button id='yes' onclick='okConfirm()'>Yes</button>
+                     <button id='no' onclick='noConfirm()'>No</button>
+                  </div>
+                </div>
+            </div>`;
+    }
+
+    async function logout() {
+      const res = await fetch("/logout", {
+        method: "POST",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+      });
+      const message = await res.text();
+      if (message === 'Logged out successfully!') {
+        confirmDiv.innerHTML = ''
+        alert(message);
+        setTimeout(() => { location.replace('/login'); }, 2000);
+      }
+    }
+
+    //logout
+    const btnLogout = document.getElementById('btn-logout');
+    btnLogout.addEventListener('click', () => { confirm('Are you sure?', logout); });
+    //get username
+    const userNameDiv = document.getElementById('user-name-div');
+    async function bodyLoad(e) {
+      const res = await fetch("/username", {
+        method: "POST",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+      });
+      const username = await res.text();
+      userNameDiv.innerText = username;
+    }
+
+    //view reviews function
+    async function viewReviews(){
+       const res = await fetch("/reviews", {
+        method: "GET",
+        credentials: "include"
+      });
+      const reviews = await res.json();
+      const container = document.createElement('div');
+      container.classList.add('container');
+      reviewsDiv.innerHTML="";
+      reviewsDiv.appendChild(container);
+      reviews.map((a, b) => {
+        const box=document.createElement("div");
+        box.classList.add('box');
+
+        const nameP=document.createElement("p");
+        const emailSmall=document.createElement("small");
+        const phoneSmall=document.createElement("small");
+        const messagePre=document.createElement("pre");
+
+        nameP.innerText=a.username;box.appendChild(nameP);
+        emailSmall.innerText=a.email;box.appendChild(emailSmall);
+        phoneSmall.innerText=a.phone;box.appendChild(phoneSmall);
+        messagePre.innerText=a.message;box.appendChild(messagePre);
+
+        container.appendChild(box);
+      })
+    }
+    //view all reviews
+    const reviewButton=document.getElementById("btn-view");
+    reviewButton.addEventListener("click",()=>{
+      viewReviews();
+    })
+  </script>
+</body>
+
+</html>

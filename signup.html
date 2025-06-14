@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../node_modules/bootstrap-icons/icons/person-fill.svg">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: aliceblue;
+}
+
+header {
+    padding-top: 5px;
+}
+
+.alert-div .alert {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 99vw;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+}
+
+.alert-div .alert .box {
+    margin: auto;
+    margin-top: -100px;
+    animation: t2b 2s;
+    padding: 10px 4px;
+    width: 400px;
+    max-width: calc(100vw - 10px);
+    border-radius: 10px;
+    box-shadow: 0 0 2px black;
+    background-color: white;
+}
+
+@keyframes t2b {
+    0% {
+        margin-top: -100px;
+    }
+
+    30% {
+        margin-top: 5px;
+    }
+
+    70% {
+        margin-top: 5px
+    }
+
+    100% {
+        margin-top: -100px;
+    }
+}
+
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    background: linear-gradient(to right, green, blue, rgb(255, 21, 99));
+    background-clip: text;
+    color: transparent;
+    width: fit-content;
+    margin: auto;
+}
+
+.signup {
+    min-height: calc(100vh - 50px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    form {
+        border-radius: 10px;
+        padding: 0 10px 10px 10px;
+        box-shadow: 0 0 2px black;
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        background-color: white;
+
+        h2 {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        input {
+            height: 30px;
+            padding: 4px;
+            border-radius: 5px;
+            border: none;
+            box-shadow: 0 0 2px grey;
+            width: 300px;
+            max-width: calc(100vw - 40px);
+            font-size: larger;
+        }
+
+        small {
+            margin-bottom: 10px;
+            color: red;
+        }
+
+        input:focus {
+            outline: 2px solid orange;
+        }
+
+        button {
+            height: 40px;
+            border: none;
+            background-color: orange;
+            color: white;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: larger;
+            display: none;
+        }
+
+        a {
+            margin: 10px 0;
+            text-align: center;
+        }
+    }
+}
+    </style>
+    <title>Signup</title>
+</head>
+
+<body>
+     <header>
+        <h1>Portfolio</h1>
+    </header>
+    <div class="signup">
+        <form id="signup-form">
+            <h2>Signup</h2>
+            <input type="text" placeholder="User ID" id="userid">
+            <small id="id-err"></small>
+            <input type="text" placeholder="Password" id="password">
+            <small id="password-err"></small>
+            <input type="text" placeholder="Confirm password" id="confirm-password">
+            <small id="confirm-password-err"></small>
+            <button id="btn-signup" type="submit">Signup</button>
+            <a href="/login">Go to login page</a>
+        </form>
+    </div>
+
+    <div class="alert-div" id="alert-div"></div>
+    <script>
+        const signupForm = document.getElementById('signup-form');
+const idInput = document.getElementById("userid");
+const passwordInput = document.getElementById("password");
+const confirmPasswordInput = document.getElementById("confirm-password");
+const idErr = document.getElementById("id-err");
+const passwordErr = document.getElementById("password-err");
+const confirmPasswordErr = document.getElementById("confirm-password-err");
+const btnSignup = document.getElementById('btn-signup');
+const alertDiv = document.getElementById("alert-div");
+
+idInput.addEventListener('keyup', (e) => {
+    if (e.target.value.length > 1) {
+        idErr.innerText = '';
+    } else {
+        idErr.innerText = 'Enter user id';
+    }
+    validateLoginBtn();
+});
+
+passwordInput.addEventListener('keyup', (e) => {
+    if (e.target.value.length > 3) {
+        passwordErr.innerText = ''; confirmPasswordErr.innerText = '';
+    } else {
+        passwordErr.innerText = 'password lenght should be 4 or greater';
+    }
+    validateLoginBtn();
+});
+
+confirmPasswordInput.addEventListener('keyup', (e) => {
+    if (e.target.value === passwordInput.value) {
+        confirmPasswordErr.innerText = '';
+    } else {
+        confirmPasswordErr.innerText = 'confirm password should match password';
+    }
+    validateLoginBtn();
+});
+
+function validateLoginBtn() {
+    if (idInput.value.length > 1 && passwordInput.value.length > 3 && confirmPasswordInput.value == passwordInput.value) {
+        btnSignup.style.display = 'block';
+    } else { btnSignup.style.display = 'none' }
+}
+
+function alert2(text) {
+    alertDiv.innerHTML = ` <div class="alert">
+                <div class="box"><p style="color: red;">${text}</p></div>
+            </div>`;
+            setTimeout(()=>{alertDiv.innerHTML=''},2000)
+}
+
+function alert(text) {
+    alertDiv.innerHTML = ` <div class="alert">
+                <div class="box"><p style="color: green;">${text}</p></div>
+            </div>`;
+            setTimeout(()=>{alertDiv.innerHTML=''},2000)
+}
+
+signupForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    if (idInput.value.length > 1 && passwordInput.value.length > 3 && confirmPasswordInput.value == passwordInput.value) {
+        const username = idInput.value.toLowerCase();
+        const password = passwordInput.value;
+
+        const res = await fetch("/signup", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username, password }),
+        });
+
+        const message = await res.text();
+        if (message == "User Registered successfully!") {
+            alert(message);
+            e.target.reset()
+        }else{alert2(message)}
+    }
+});
+    </script>
+</body>
+
+</html>
