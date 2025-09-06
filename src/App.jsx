@@ -8,14 +8,14 @@ import Works from "./Works";
 
 export default function App() {
   return (
-    <div className="text-gray-800 bg-white font-[Poppins]">
-      <Header />
-      <Home />
-      <About />
-      <Skills />
-      <Works />
-      <Contacts />
-      <Footer />
+    <div>
+      <Header/>
+      <Home/>
+      <About/>
+      <Skills/>
+      <Works/>
+      <Contacts/>
+      <Footer/>
     </div>
   )
 }
