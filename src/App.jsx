@@ -8,7 +8,7 @@ import Works from "./Works";
 
 export default function App() {
   return (
-    <div>
+    <div className="min-h-screen ">
       <Header/>
       <Home/>
       <About/>
