@@ -59,10 +59,10 @@ export default function Contacts() {
     <section ref={contacts} className='max-w-5xl m-auto p-3 pt-13 min-h-screen'>
       <h1 className="text-center font-bold underline underline-offset-8 text-3xl text-primary">Contacts</h1>
       <div className="grid md:grid-cols-2 mt-4">
-        <div className="flex flex-col items-center w-full mt-4 gap-2">
-          <h2 className="font-semibold text-xl">Connect with me</h2>
-          <div className=" flex flex-col gap-3 flex-1 justify-center">
-            <nav className="flex gap-3">
+        <div className="flex flex-col w-full mt-4 gap-2">
+          <h2 className="font-semibold text-xl text-center underline underline-offset-3">Connect with me</h2>
+          <div className=" flex flex-col gap-3 flex-1">
+            <nav className="flex gap-3 justify-center">
               <a className="btn btn-primary" href="https://www.linkedin.com/in/satya-narayan-dharua-4992b7174">
                 <FaLinkedin size={27} />
               </a>
@@ -83,7 +83,7 @@ export default function Contacts() {
           onSubmit={sendMessage}
           onChange={onFormChange}
           className="flex flex-col items-center w-full m-auto max-w-md mt-4">
-          <h2 className="font-semibold text-xl">Send message</h2>
+          <h2 className="font-semibold text-xl underline underline-offset-3">Send message</h2>
           <input type="text" placeholder="Name" style={{ boxShadow: `0 0 2px ${theme.text}` }}
             className="w-full outline-primary mt-2 p-3 focus:outline-2 rounded-xl placeholder:text-gray-500"
             pattern="[a-zA-Z ]{2,}" title="At least two characters"

@@ -14,22 +14,32 @@ export function GlobalProvider({ children }) {
     const [marginTop, setmarginTop] = useState(-50)
     const modalRef = useRef()
     const modalRef2 = useRef()
-    const colors = { bg: '#101234', text: "#eeeeee",};
-    const [theme, settheme] = useState({ text: colors.bg, bg: colors.text })
+    const colors = { text: '#101234', bg: "#eeeeee", };
+    const [theme, settheme] = useState(colors)
 
     //change theme
     const changeTheme = () => {
         if (theme.text === colors.text) {
+            localStorage.setItem('theme', 'light')
             settheme({ text: colors.bg, bg: colors.text })
         } else {
+            localStorage.setItem('theme', 'dark')
             settheme({ text: colors.text, bg: colors.bg })
         }
     }
 
+    //set theme
+    useEffect(() => {
+        const themeREf = localStorage.getItem('theme');
+        if (themeREf === 'dark') {
+            settheme({ text: colors.text, bg: colors.bg })
+        }
+    }, [])
+
     //alert modal
     useEffect(() => {
-        clearTimeout(timeOut.current)
         if (alert) {
+            clearTimeout(timeOut.current)
             modalRef.current.showModal();
             setmarginTop(0)
             timeOut.current = setTimeout(() => { setmarginTop(-50); }, 1500)

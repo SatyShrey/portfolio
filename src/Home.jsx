@@ -3,7 +3,7 @@ import image from './assets/satya.png';
 import { useValues } from './GlobalContexts';
 
 export default function Home() {
-  const { home, contacts, theme} = useValues();
+  const { home, contacts, theme } = useValues();
   function scrollPage(el) {
     el.current.scrollIntoView({ behavior: "smooth" });
   }
@@ -20,16 +20,21 @@ export default function Home() {
       </div>
 
       <div className='flex gap-5 items-center'>
-        <a className='hover:scale-[1.1] hover:text-primary' href="https://www.linkedin.com/in/satya-narayan-dharua-4992b7174"><FaLinkedin size={30} /></a>
-        <a className='hover:scale-[1.1] hover:text-primary' href="https://github.com/SatyShrey"><FaGithub size={30} /></a>
-        <a className='hover:scale-[1.1] hover:text-primary' href="https://www.facebook.com/narayan.dharua"><FaFacebook size={30} /></a>
+        <a className='hover:scale-[1.2] hover:text-primary' href="https://www.linkedin.com/in/satya-narayan-dharua-4992b7174"><FaLinkedin size={30} /></a>
+        <a className='hover:scale-[1.2] hover:text-primary' href="https://github.com/SatyShrey"><FaGithub size={30} /></a>
+        <a className='hover:scale-[1.2] hover:text-primary' href="https://www.facebook.com/narayan.dharua"><FaFacebook size={30} /></a>
       </div>
 
-      <div className='text-center'>
-        <div className={`w-80 m-auto my-5 max-w-4/5 overflow-hidden rounded-full shadow-primary shadow-[0_4px_10px]`}>
+      <div className='flex flex-col items-center justify-center'>
+        <div className="w-80 m-auto my-5 max-w-4/5 overflow-hidden rounded-full shadow-primary shadow-[0_4px_10px]">
           <img src={image} alt="profile_pic" className='hover:scale-[1.3] transition-all duration-600' />
         </div>
-        <button onClick={() => scrollPage(contacts)} className='btn btn-primary rounded-full'>Contact me</button>
+
+        <button onClick={() => scrollPage(contacts)}
+          className="h-11 w-36 flex items-center border-1 border-primary rounded-full overflow-hidden relative justify-center 
+          cursor-pointer after:absolute after:w-0 after:rounded-full after:top-0 after:bottom-0 after:transition-all after:duration-500
+         after:left-0 after:bg-primary hover:after:w-36 before:content-['Contact_me'] before:z-[1] hover:text-white transition-all"/>
+
       </div>
 
     </section>

@@ -2,7 +2,7 @@ import { BiDownload } from 'react-icons/bi';
 import { useValues } from './GlobalContexts';
 import pdf from "./assets/Fullstack-Developer.pdf"
 export default function About() {
-  const { about } = useValues();
+  const { about, theme } = useValues();
   return (
     <section ref={about} className='max-w-5xl p-3 pt-13 m-auto '>
       <h1 className="font-bold underline underline-offset-4 text-center text-3xl text-primary">About</h1>
@@ -17,30 +17,35 @@ export default function About() {
       <div className="grid md:grid-cols-2 mt-2 gap-4">
         <div>
           <h2 className='font-semibold text-xl text-center underline underline-offset-3'>Educations</h2>
-          <h3  className='mt-1 border-b w-fit'>
-            <span className='font-bold text-primary'>MCA</span> <span className='text-sm'>(Master of Computer Applications)</span>
+          <h3 className='mt-1 border-b w-fit'>
+            <span className='font-bold text-primary text-xl'>MCA</span> (Master of Computer Applications)
           </h3>
           <p> College: Ganesh Institute of Management Studies, Bhubaneswar</p>
           <p>Year of passout: 2025</p>
           <p>Specialization: Computer</p>
 
           <h3 className='mt-2 border-b w-fit'>
-            <span className='font-bold text-primary'>BCA</span> <span className='text-sm'>(Bachelor of Computer Applications)</span>
+            <span className='font-bold text-primary text-xl'>BCA</span> (Bachelor of Computer Applications)
           </h3>
           <p> College: Academy of Management and Information Technology, Khordha</p>
           <p>Year of passout: 2023</p>
           <p>Specialization: Computer</p>
         </div>
 
-        <div className='flex flex-col text-center gap-2'>
+        <div className='gap-2 text-center'>
           <h2 className='font-semibold text-xl underline underline-offset-3'>Interests</h2>
-          <h3 className='font-semibold text-primary'>Trading</h3>
-          <h3 className='font-semibold text-primary'>Photoshop</h3>
-          <h3 className='font-semibold text-primary'>Bike riding</h3>
+          <span className='btn btn-primary m-0.5'>Photoshop</span>
+          <span className='btn btn-primary m-0.5'>Bike riding</span>
+          <span className='btn btn-primary m-0.5'>Trading</span>
         </div>
       </div>
-      <div className='text-center my-4'>
-        <a className='btn btn-primary rounded-full' href={pdf}><BiDownload size={30} />My Resume</a>
+      <div className='flex my-4 justify-center'>
+        <a href={pdf}
+          className="h-11 w-36 flex items-center border-1 border-primary rounded-full overflow-hidden relative justify-center 
+          cursor-pointer after:absolute after:w-0 after:rounded-full after:top-0 after:bottom-0 after:transition-all after:duration-500
+         after:left-0 after:bg-primary hover:after:w-36 hover:text-white transition-all
+         "><span className="z-[1]"><BiDownload className='inline -mt-1' size={25} /> My Resume</span></a>
+
       </div>
     </section>
   )

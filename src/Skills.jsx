@@ -19,7 +19,8 @@ const skillsArray = [
   { name: "Python", logo: DiPython, progress: 20, category: "Backend" },
   { name: "MongoDB", logo: DiMongodb, progress: 40, category: "Database" },
   { name: "Firebase", logo: DiFirebase, progress: 40, category: "Database" },
-]
+];
+const categories=['', 'Backend', 'Frontend', "Database"];
 
 export default function Skills() {
   const { skills, theme } = useValues();
@@ -29,8 +30,8 @@ export default function Skills() {
       <h1 className="text-center font-bold underline underline-offset-4 text-3xl text-primary">Skills</h1>
       <div className="mt-5 flex justify-center gap-1 flex-wrap">
         {
-          ['', 'Backend', 'Frontend', "Database"].map((a, b) =>
-            <button className={`btn ${a === currentCategory ? "btn-primary" : "btn-outline"}`}
+          categories.map((a, b) =>
+            <button key={b} className={`btn ${a === currentCategory ? "btn-primary" : "btn-outline"}`}
               onClick={() => setcurrentCategory(a)}>{a === '' ? "All" : a}</button>)
         }
       </div>
