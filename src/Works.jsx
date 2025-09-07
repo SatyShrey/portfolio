@@ -16,7 +16,7 @@ export default function Works() {
       <h1 className="text-center font-bold underline underline-offset-4 text-3xl text-primary">Works</h1>
       <div className="mt-5 grid gap-2 sm:grid-cols-2">
         {projects.map((a, b) =>
-          <div style={{boxShadow:`0 0 2px ${theme.text}`,backgroundColor:`${theme.text}10`}}
+          <div style={{boxShadow:`0 0 2px ${theme.color}`,backgroundColor:`${theme.color}10`}}
           className="w-full rounded-xl p-2 flex justify-center flex-wrap" key={b}>
             <img src={a.image} alt='project_screenshot' className="rounded-xl md:w-1/2" />
             <div className="flex flex-col justify-center items-center gap-2 md:w-1/2">

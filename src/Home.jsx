@@ -3,7 +3,7 @@ import image from './assets/satya.png';
 import { useValues } from './GlobalContexts';
 
 export default function Home() {
-  const { home, contacts, theme } = useValues();
+  const { home, contacts, } = useValues();
   function scrollPage(el) {
     el.current.scrollIntoView({ behavior: "smooth" });
   }

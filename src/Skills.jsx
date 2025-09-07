@@ -20,7 +20,7 @@ const skillsArray = [
   { name: "MongoDB", logo: DiMongodb, progress: 40, category: "Database" },
   { name: "Firebase", logo: DiFirebase, progress: 40, category: "Database" },
 ];
-const categories=['', 'Backend', 'Frontend', "Database"];
+const categories = ['', 'Backend', 'Frontend', "Database"];
 
 export default function Skills() {
   const { skills, theme } = useValues();
@@ -31,14 +31,15 @@ export default function Skills() {
       <div className="mt-5 flex justify-center gap-1 flex-wrap">
         {
           categories.map((a, b) =>
-            <button key={b} className={`btn ${a === currentCategory ? "btn-primary" : "btn-outline"}`}
+            <button key={b} className={`btn transition-all duration-300 shadow-[0_0_2px]
+              ${a === currentCategory ? "btn-primary" : ""}`}
               onClick={() => setcurrentCategory(a)}>{a === '' ? "All" : a}</button>)
         }
       </div>
       <div className="mt-2 grid md:grid-cols-2 gap-2">
         {
           skillsArray.filter((f) => f.category.includes(currentCategory)).map((a, b) =>
-            <div key={b} style={{ boxShadow: `0 0 1px ${theme.text}`,backgroundColor:`${theme.text}10`}}
+            <div key={b} style={{ boxShadow: `0 0 1px ${theme.color}`, backgroundColor: `${theme.color}10` }}
               className="p-2 rounded-xl">
               <div className="flex items-center">
                 <a.logo size={30} className="text-primary" />

@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useRef, useState } from "react";
-import { BiCheck, BiCheckCircle } from "react-icons/bi";
+import { BiCheckCircle } from "react-icons/bi";
 
 const GlobalContexts = createContext();
 export function GlobalProvider({ children }) {
@@ -14,25 +14,21 @@ export function GlobalProvider({ children }) {
     const [marginTop, setmarginTop] = useState(-50)
     const modalRef = useRef()
     const modalRef2 = useRef()
-    const colors = { text: '#101234', bg: "#eeeeee", };
-    const [theme, settheme] = useState(colors)
+    const darkTheme={backgroundColor: '#101234', color: "#eeeeee",theme:"dark"}
+    const lightTheme = { color: '#101234', backgroundColor: "#eeeeee",theme:"light" };
+    const [theme, settheme] = useState(lightTheme)
 
     //change theme
     const changeTheme = () => {
-        if (theme.text === colors.text) {
-            localStorage.setItem('theme', 'light')
-            settheme({ text: colors.bg, bg: colors.text })
-        } else {
-            localStorage.setItem('theme', 'dark')
-            settheme({ text: colors.text, bg: colors.bg })
-        }
+        if(theme.theme==="light"){settheme(darkTheme);localStorage.setItem('theme',"dark")}
+        else{settheme(lightTheme);localStorage.setItem('theme',"light")}
     }
 
     //set theme
     useEffect(() => {
         const themeREf = localStorage.getItem('theme');
         if (themeREf === 'dark') {
-            settheme({ text: colors.text, bg: colors.bg })
+            settheme(darkTheme)
         }
     }, [])
 
@@ -55,9 +51,9 @@ export function GlobalProvider({ children }) {
     }, [loading]);
 
     return (
-        <GlobalContexts.Provider value={{ home, about, skills, works, contacts, Alert, Loading, changeTheme, theme, colors }}>
-            <div className=" transition-all duration-700 poppins-regular"
-                style={{ backgroundColor: theme.bg, color: theme.text, }}>
+        <GlobalContexts.Provider value={{ home, about, skills, works, contacts, Alert, Loading, changeTheme, theme, }}>
+            <div className='transition-all duration-700 font-["Poppins"]'
+                style={theme}>
                 {children}
                 <dialog //success alert
                     ref={modalRef} className="bg-transparent w-fit mx-auto ">
@@ -69,8 +65,8 @@ export function GlobalProvider({ children }) {
                 <dialog //loader
                     ref={modalRef2} className="w-full h-full m-auto outline-0 bg-transparent">
                     <div className="w-full flex justify-center items-center h-full">
-                        <div style={{ borderTopColor: "white", height: "100px", width: "100px", }}
-                            className="animate-spin rounded-full m-auto border-4 border-gray-500 border-t-primary"></div>
+                        <div style={{borderTopColor:theme.color}}
+                        className="animate-spin w-24 h-24 rounded-full m-auto border-4 border-gray-500"></div>
                     </div>
                 </dialog>
             </div>

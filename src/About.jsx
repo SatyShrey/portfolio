@@ -2,7 +2,7 @@ import { BiDownload } from 'react-icons/bi';
 import { useValues } from './GlobalContexts';
 import pdf from "./assets/Fullstack-Developer.pdf"
 export default function About() {
-  const { about, theme } = useValues();
+  const { about, } = useValues();
   return (
     <section ref={about} className='max-w-5xl p-3 pt-13 m-auto '>
       <h1 className="font-bold underline underline-offset-4 text-center text-3xl text-primary">About</h1>

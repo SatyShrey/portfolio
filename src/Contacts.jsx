@@ -12,7 +12,7 @@ export default function Contacts() {
   const [email, setemail] = useState('')
   const [phone, setphone] = useState('')
   const [message, setmessage] = useState('')
-  const [viewSubmit, setViewSubmit] = useState();
+  const [isFormReady, setFormReady] = useState(false);
   const SERVICE_ID = "service_9gwinis";
   const TEMPLATE_ID = "template_cpuad9a";
   const publicKey = "MRQ_qj6sA23Ffp73_";
@@ -53,7 +53,11 @@ export default function Contacts() {
     }
   }
 
-  const onFormChange = (e) => setViewSubmit(e.currentTarget.checkValidity())
+  const onFormChange = (e) => {
+   const isValidInputs=(name && email && phone && message !=='')
+   const isValidForm=e.currentTarget.checkValidity()
+    setFormReady(isValidInputs && isValidForm);
+  }
 
   return (
     <section ref={contacts} className='max-w-5xl m-auto p-3 pt-13 min-h-screen'>
@@ -84,32 +88,31 @@ export default function Contacts() {
           onChange={onFormChange}
           className="flex flex-col items-center w-full m-auto max-w-md mt-4">
           <h2 className="font-semibold text-xl underline underline-offset-3">Send message</h2>
-          <input type="text" placeholder="Name" style={{ boxShadow: `0 0 2px ${theme.text}` }}
+          <input type="text" placeholder="Name" style={{ boxShadow: `0 0 2px ${theme.color}` }}
             className="w-full outline-primary mt-2 p-3 focus:outline-2 rounded-xl placeholder:text-gray-500"
             pattern="[a-zA-Z ]{2,}" title="At least two characters"
             onChange={(e) => onChange(e, setname, "nameError")}
           /><small className="hidden text-error" id="nameError">Invalid name format</small>
 
-          <input type="email" placeholder="Email" title="Invalid email format" style={{ boxShadow: `0 0 2px ${theme.text}` }}
+          <input type="email" placeholder="Email" title="Invalid email format" style={{ boxShadow: `0 0 2px ${theme.color}` }}
             className=" w-full outline-primary mt-2 p-3 focus:outline-2 rounded-xl placeholder:text-gray-500"
             onChange={(e) => onChange(e, setemail, "emailError")} pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$"
           /> <small className="hidden text-error" id="emailError">Invalid email format</small>
 
           <input type="tel" placeholder="Phone" pattern="[0-9]{10}" title="Must be 10 digits" maxLength={10}
             className="w-full outline-primary mt-2 p-3 focus:outline-2 rounded-xl placeholder:text-gray-500"
-            onChange={(e) => onChange(e, setphone, "phoneError")} style={{ boxShadow: `0 0 2px ${theme.text}` }}
+            onChange={(e) => onChange(e, setphone, "phoneError")} style={{ boxShadow: `0 0 2px ${theme.color}` }}
           /> <small className="hidden text-error" id="phoneError">Eter 10 digits phone number</small>
 
           <textarea placeholder="Write message" onChange={(e) => setmessage(e.target.value)}
-            maxLength={200} style={{ boxShadow: `0 0 2px ${theme.text}` }}
+            maxLength={200} style={{ boxShadow: `0 0 2px ${theme.color}` }}
             className="resize-none h-40 w-full outline-primary mt-2 p-3 focus:outline-2 rounded-xl placeholder:text-gray-500"></textarea>
           {message && <small className={message.length === 200 ? "text-error" : ""}>{message.length}/200</small>}
 
-          {
-            (viewSubmit && (name && email && phone && message)) ?
-              <button className="btn btn-primary mt-3 rounded-full">Send message</button>
-              : <div className="rounded-full opacity-30 p-3 mt-3 bg-primary">Send message</div>
-          }
+          <button className="btn mt-3 rounded-full btn-primary w-48" disabled={ isFormReady ? false : true}
+          style={isFormReady ?{}:{backgroundColor:theme.color+"10",color:theme.color+"20"}}
+          >Send</button>
+
         </form>
       </div>
     </section>
