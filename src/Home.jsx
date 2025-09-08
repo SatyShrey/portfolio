@@ -1,22 +1,55 @@
 import { FaFacebook, FaGithub, FaLinkedin } from 'react-icons/fa6'
 import image from './assets/satya.png';
 import { useValues } from './GlobalContexts';
+import BlurText from './BlurText';
+import { useState } from 'react';
+import Particles from './Particles';
 
 export default function Home() {
-  const { home, contacts, } = useValues();
-  function scrollPage(el) {
-    el.current.scrollIntoView({ behavior: "smooth" });
-  }
-  return (
-    <section ref={home} className='max-w-5xl p-3 pt-13 m-auto'>
+  const { home, contacts, theme } = useValues();
+  const [secondLine, setsecondLine] = useState(false)
+  const [thirdLine, setthirdLine] = useState(false)
+  const [fourthLine, setfourthLine] = useState(false)
 
-      <div className='font-bold'>
-        <div className='text-3xl sm:text-4xl md:text-5xl my-3'>Hi,</div>
-        <div className='text-3xl sm:text-4xl md:text-5xl'>
-          <span>I'm </span>
-          <span className='text-primary'>Satya Narayan Dharua</span>
-        </div>
-        <div className='my-3'>Fullstack Web Developer</div>
+  //scroll page
+  function scrollPage(el) { el.current.scrollIntoView({ behavior: "smooth" }); }
+
+  return (
+    <section className='max-w-5xl p-3 m-auto relative'>
+      <div ref={home} className='absolute -top-40'></div>
+      <div className='font-bold min-h-40'>
+        <BlurText
+          text="Hi,"
+          delay={150}
+          animateBy="words"
+          direction="top"
+          className='text-3xl sm:text-4xl md:text-5xl my-3'
+          onAnimationComplete={() => setsecondLine(true)}
+        />
+        {secondLine && <BlurText
+          text="I'm"
+          delay={150}
+          animateBy="words"
+          direction="top"
+          className='inline text-3xl sm:text-4xl md:text-5xl'
+          onAnimationComplete={() => setthirdLine(true)}
+        />}
+        {thirdLine && <BlurText
+          text=" Satya Narayan Dharua"
+          delay={150}
+          animateBy="words"
+          direction="top"
+          className='text-primary inline text-3xl sm:text-4xl md:text-5xl'
+          onAnimationComplete={() => setfourthLine(true)}
+          stepDuration={0.35}
+        />}
+        {fourthLine && <BlurText
+          text="Fullstack Web Developer"
+          delay={150}
+          animateBy="words"
+          direction="top"
+          className='my-3 not-sm:mt-1'
+        />}
       </div>
 
       <div className='flex gap-5 items-center'>
@@ -38,5 +71,6 @@ export default function Home() {
       </div>
 
     </section>
+
   )
 }

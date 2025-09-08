@@ -59,7 +59,7 @@ export default function () {
       </div>
       <nav //mobile menu
         style={{ width: navWidth, transition: '0.5s', background: theme.backgroundColor, boxShadow: `0 0 2px ${theme.color}` }}
-        className="sm:hidden h-3xl flex overflow-hidden flex-col gap-4 absolute pb-10 top-0 right-0"
+        className="sm:hidden h-3xl flex overflow-hidden flex-col gap-4 absolute rounded-bl-sm pb-10 top-0 right-0"
       >
         <button className="font-semibold w-fit p-2" onClick={() => setnavWidth('0px')}>
           <CgClose size={20} />

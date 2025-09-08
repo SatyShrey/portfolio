@@ -8,14 +8,14 @@ import Works from "./Works";
 
 export default function App() {
   return (
-    <div className="min-h-screen ">
-      <Header/>
-      <Home/>
-      <About/>
-      <Skills/>
-      <Works/>
-      <Contacts/>
-      <Footer/>
+    <div className=" relative">
+      <Header />
+      <Home />
+      <About />
+      <Skills />
+      <Works />
+      <Contacts />
+      <Footer />
     </div>
   )
 }
