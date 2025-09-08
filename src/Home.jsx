@@ -3,10 +3,9 @@ import image from './assets/satya.png';
 import { useValues } from './GlobalContexts';
 import BlurText from './BlurText';
 import { useState } from 'react';
-import Particles from './Particles';
 
 export default function Home() {
-  const { home, contacts, theme } = useValues();
+  const { home, contacts, } = useValues();
   const [secondLine, setsecondLine] = useState(false)
   const [thirdLine, setthirdLine] = useState(false)
   const [fourthLine, setfourthLine] = useState(false)
