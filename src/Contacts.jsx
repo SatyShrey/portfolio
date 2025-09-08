@@ -48,7 +48,7 @@ export default function Contacts() {
   return (
     <section ref={contacts} className='max-w-5xl m-auto p-3 pt-13 min-h-screen'>
       <h1 className="text-center font-bold underline underline-offset-8 text-3xl text-primary">Contacts</h1>
-      <div className="grid md:grid-cols-2 mt-4">
+      <div className="grid md:grid-cols-2">
         <div className="flex flex-col w-full mt-4 gap-2">
           <h2 className="font-semibold text-xl text-center underline underline-offset-3">Connect with me</h2>
           <div className=" flex flex-col gap-3 flex-1">
