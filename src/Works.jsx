@@ -1,12 +1,10 @@
-import aichatbot from "./project_screenshots/aichatbot.png"
-import myimageslider from "./project_screenshots/myimageslider.png"
-import countdowntimer from "./project_screenshots/countdowntimer.png"
+import gemini from "./project_screenshots/gemini.png"
+import calculator from "./project_screenshots/calculator.png"
 import { useValues } from "./GlobalContexts"
 
 const projects = [
-  { git:"",name: "AI Chat Bot", image: aichatbot, link: "https://aichatbotatweb3.netlify.app", tech: "HTML, CSS, JavaScript, React, Gemini API" },
-  { git:"",name: "Image Slider", image: myimageslider, link: "https://myimagesliderdemo.netlify.app", tech: "HTML, CSS, JavaScript" },
-  { git:"",name: "Countdown Timer", image: countdowntimer, link: "https://countdowntimer3344.netlify.app", tech: "HTML, CSS, JavaScript" },
+  { git:"",name: "Gemini lemo", image: gemini, link: "https://gemini-render-app.netlify.app/", tech: "HTML, CSS, JavaScript, React, Gemini API, Tailwind CSS, NodeJS, ExpressJS",github:"https://github.com/SatyShrey/geminiapp" },
+  { git:"",name: "Calculator", image: calculator, link: "https://e-simple-calculator.netlify.app", tech: "HTML, CSS, JavaScript, React, Tailwind CSS, DaisyUI",github:"https://github.com/SatyShrey/Simple_Calculator"},
 ];
 //const token = 'TVZPZBW-PYCM3HP-NKAX846-3JFGJ2H';
 export default function Works() {
@@ -23,7 +21,7 @@ export default function Works() {
               <h2 className="text-2xl font-semibold text-center">{a.name}</h2>
               <div className="flex items-center gap-2">
                 <a href={a.link} className="btn btn-sm btn-primary">Open link</a>
-                <a href={a.link} className="btn btn-sm btn-primary">Github</a>
+                <a href={a.github} className="btn btn-sm btn-primary">Github</a>
               </div>
             </div>
           </div>

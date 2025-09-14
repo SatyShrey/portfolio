@@ -42,7 +42,7 @@ export default function () {
               <button key={b}
                 className={`font-semibold hover:scale-[1.1] flex flex-col items-center cursor-pointer
                   relative after:absolute after:bottom-0 hover:after:w-[100%] after:transition-all 
-                  after:h-0.5 after:bg-primary after:duration-500
+                  after:h-0.5 after:bg-primary after:duration-500 transition-all duration-300
                   ${currentSection === a.name ? "after:w-[100%]" : "after:w-[0%]"} 
                 ${currentSection === a.name ? "text-primary" : theme.color}`}
                 onClick={() => { scrollPage(a.ref) }}

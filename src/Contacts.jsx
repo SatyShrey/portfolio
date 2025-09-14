@@ -15,9 +15,9 @@ export default function Contacts() {
   const [emailError, setemailError] = useState(false)
   const [phoneError, setphoneError] = useState(false)
   const [message, setmessage] = useState('')
-  const SERVICE_ID = "service_9gwinis";
-  const TEMPLATE_ID = "template_cpuad9a";
-  const publicKey = "MRQ_qj6sA23Ffp73_";
+  const SERVICE_ID =import.meta.env.SERVICE_ID //"service_9gwinis";
+  const TEMPLATE_ID =import.meta.env.TEMPLATE_ID //"template_cpuad9a";
+  const publicKey =import.meta.env.publicKey //"MRQ_qj6sA23Ffp73_";
 
   //send message
   const sendMessage = (e) => {
