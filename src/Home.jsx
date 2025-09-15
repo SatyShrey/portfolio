@@ -1,5 +1,5 @@
 import { FaFacebook, FaGithub, FaLinkedin } from 'react-icons/fa6'
-import image from './assets/satya2.png';
+import image from './assets/satya.jpg';
 import { useValues } from './GlobalContexts';
 import BlurText from './BlurText';
 import { useState } from 'react';
