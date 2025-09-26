@@ -19,7 +19,7 @@ export default function Home() {
       <div className='font-bold min-h-40'>
         <BlurText
           text="Hi,"
-          delay={150}
+          delay={100}
           animateBy="words"
           direction="top"
           className='text-3xl sm:text-4xl md:text-5xl my-3'
@@ -27,7 +27,7 @@ export default function Home() {
         />
         {secondLine && <BlurText
           text="I'm"
-          delay={150}
+          delay={100}
           animateBy="words"
           direction="top"
           className='inline text-3xl sm:text-4xl md:text-5xl'
@@ -35,7 +35,7 @@ export default function Home() {
         />}
         {thirdLine && <BlurText
           text=" Satya Narayan Dharua"
-          delay={150}
+          delay={100}
           animateBy="words"
           direction="top"
           className='text-primary inline text-3xl sm:text-4xl md:text-5xl'
@@ -58,7 +58,7 @@ export default function Home() {
       </div>
 
       <div className='flex flex-col items-center justify-center'>
-        <div className="w-80 m-auto my-5 max-w-[calc(100%-30px)] overflow-hidden rounded-full shadow-primary shadow-[0_4px_10px]">
+        <div className="w-80 m-auto my-5 max-w-[calc(100%-30px)] overflow-hidden rounded-full outline-2 outline-primary">
           <img src={image} alt="profile_pic" className='hover:scale-[1.3] transition-all duration-600' />
         </div>
 
