@@ -42,7 +42,7 @@ export default function Skills() {
         {
           skillsArray.filter((f) => f.category.includes(currentCategory)).map((a, b) =>
             <div key={b} style={{ boxShadow: `0 0 1px ${theme.color}`, backgroundColor: `${theme.color}10` }}
-              className="p-2 rounded-xl">
+              className="p-2 rounded-xl anim-div">
               <div className="flex items-center">
                 <a.logo size={30} className="text-primary" />
                 <span className="flex-1">{a.name}</span>

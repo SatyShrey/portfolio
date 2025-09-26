@@ -3,7 +3,16 @@
 
 @custom-variant dark (&:is(.dark *));
 @plugin "daisyui";
-
-.font-popins {
+*{
   font-family: "Poppins", sans-serif;
+}
+
+.anim-div{
+  animation:anim2 linear;
+  animation-timeline:view();
+  animation-range: entry 0% cover 40%;
+}
+@keyframes anim2 {
+  0%{scale:0.5;opacity: 0;}
+  100%{scale:1;opacity: 1;}
 }
