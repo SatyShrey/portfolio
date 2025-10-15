@@ -7,6 +7,10 @@
   font-family: "Poppins", sans-serif;
 }
 
+.bar0{
+  scrollbar-width: none;
+}
+
 .anim-div{
   animation:anim2 linear;
   animation-timeline:view();

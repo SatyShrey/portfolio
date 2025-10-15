@@ -1,15 +1,5 @@
-import gemini from "./project_screenshots/gemini.png"
-import calculator from "./project_screenshots/calculator.png"
-import whatshop from "./project_screenshots/whatshop.png"
+import projects from './projects'
 import { useValues } from "./GlobalContexts"
-
-const projects = [
-  {name: "Gemini lemon", image: gemini, link: "https://gemini-render-app.netlify.app/", tech: "HTML, CSS, JavaScript, React, Gemini API, Tailwind CSS, NodeJS, ExpressJS",github:"https://github.com/SatyShrey/geminiapp" },
-
-  {name: "Calculator", image: calculator, link: "https://e-simple-calculator.netlify.app", tech: "HTML, CSS, JavaScript, React, Tailwind CSS, DaisyUI",github:"https://github.com/SatyShrey/Simple_Calculator"},
-
-   {name: "WhatShop", image: whatshop, link: "https://whatshop-com.netlify.app", tech: "HTML, CSS, JavaScript, React, Tailwind CSS, DaisyUI,NodeJS, MongoDB, Socket.io",github:"https://github.com/SatyShrey/whatshop"},
-];
 
 export default function Works() {
   const { works,theme } = useValues();
@@ -19,8 +9,8 @@ export default function Works() {
       <div className="mt-5 grid gap-2 sm:grid-cols-2">
         {projects.map((a, b) =>
           <div style={{boxShadow:`0 0 2px ${theme.color}`,backgroundColor:`${theme.color}10`}}
-          className="w-full rounded-xl p-2 flex justify-center flex-wrap anim-div" key={b}>
-            <img src={a.image} alt='project_screenshot' className="rounded-xl md:w-1/2" />
+          className="w-full rounded-xl p-2 flex justify-center flex-wrap" key={b}>
+            <iframe src={a.link} className="rounded-xl md:w-1/2" scrolling='no' />
             <div className="flex flex-col justify-center items-center gap-2 md:w-1/2">
               <h2 className="text-2xl font-semibold text-center">{a.name}</h2>
               <div className="flex items-center gap-2">

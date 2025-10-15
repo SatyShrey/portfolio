@@ -59,7 +59,7 @@ export default function Home() {
 
       <div className='flex flex-col items-center justify-center'>
         <div className="w-80 m-auto my-5 max-w-[calc(100%-30px)] overflow-hidden rounded-full outline-2 outline-primary">
-          <img src={image} alt="profile_pic" className='hover:scale-[1.3] transition-all duration-600' />
+          <img src={image} alt="profile_pic" className='' />
         </div>
 
         <button onClick={() => scrollPage(contacts)}
