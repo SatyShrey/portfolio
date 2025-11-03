@@ -70,14 +70,22 @@ export default function Home() {
         </a>
       </div>
 
-      <motion.div initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }} className="flex flex-col items-center justify-center">
-        <div className="w-80 m-auto my-5 max-w-[calc(100%-30px)] overflow-hidden rounded-full outline-2 outline-primary">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="flex flex-col items-center justify-center"
+      >
+        <motion.div
+          initial={{ opacity: 0, rotate: -50,x:-100 }}
+          animate={{ opacity: 1, rotate: 0,x:0 }}
+          transition={{ duration: 1,delay:0.5 }}
+          className="w-80 m-auto my-5 max-w-[calc(100%-30px)] overflow-hidden rounded-full outline-2 outline-primary"
+        >
           <img src={image} alt="profile_pic" className="" />
-        </div>
+        </motion.div>
 
-        <button 
+        <button
           onClick={() => scrollPage(contacts)}
           className="h-11 w-36 flex items-center border-1 border-primary rounded-full overflow-hidden relative justify-center 
           cursor-pointer after:absolute after:w-0 after:rounded-full after:top-0 after:bottom-0 after:transition-all after:duration-500
