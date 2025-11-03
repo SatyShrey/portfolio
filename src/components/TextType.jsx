@@ -6,7 +6,7 @@ import { gsap } from 'gsap';
 const TextType = ({
   text,
   as: Component = 'div',
-  typingSpeed = 50,
+  typingSpeed = 100,
   initialDelay = 0,
   pauseDuration = 2000,
   deletingSpeed = 30,
@@ -15,8 +15,8 @@ const TextType = ({
   showCursor = true,
   hideCursorWhileTyping = false,
   cursorCharacter = '|',
-  cursorClassName = '',
-  cursorBlinkDuration = 0.5,
+  cursorClassName = 'text-gray-500',
+  cursorBlinkDuration = 0.9,
   textColors = [],
   variableSpeed,
   onSentenceComplete,
@@ -39,11 +39,6 @@ const TextType = ({
     const { min, max } = variableSpeed;
     return Math.random() * (max - min) + min;
   }, [variableSpeed, typingSpeed]);
-
-  const getCurrentTextColor = () => {
-    if (textColors.length === 0) return '#ffffff';
-    return textColors[currentTextIndex % textColors.length];
-  };
 
   useEffect(() => {
     if (!startOnVisible || !containerRef.current) return;
@@ -156,7 +151,7 @@ const TextType = ({
       className: `inline-block whitespace-pre-wrap tracking-tight ${className}`,
       ...props
     },
-    <span className="inline" style={{ color: getCurrentTextColor() }}>
+    <span className="inline">
       {displayedText}
     </span>,
     showCursor && (

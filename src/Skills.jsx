@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useValues } from "./GlobalContexts";
 import skillsArray from "./skillsarray";
+import AnimatedSection from "./components/AnimatedSection";
 
 const categories = ['', 'Backend', 'Frontend', "Database"];
 
@@ -8,7 +9,8 @@ export default function Skills() {
   const { skills, theme } = useValues();
   const [currentCategory, setcurrentCategory] = useState('');
   return (
-    <section ref={skills} className='max-w-5xl p-3 pt-13 m-auto'>
+   <AnimatedSection>
+     <div ref={skills} className='max-w-5xl p-3 pt-13 m-auto'>
       <h1 className="text-center font-bold underline underline-offset-4 text-3xl text-primary">Skills</h1>
       <div className="mt-5 flex justify-center gap-1 flex-wrap">
         {
@@ -36,6 +38,7 @@ export default function Skills() {
             </div>)
         }
       </div>
-    </section>
+    </div>
+   </AnimatedSection>
   )
 }

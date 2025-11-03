@@ -8,7 +8,7 @@ import Works from "./Works";
 
 export default function App() {
   return (
-    <div className=" relative">
+    <div className='relative font-["Poppins"]'>
       <Header />
       <Home />
       <About />
